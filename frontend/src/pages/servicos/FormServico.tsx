@@ -41,14 +41,31 @@ export function FormServico() {
     <form className="servico-form" onSubmit={handleSubmit}>
       <h2>{editando ? 'Editar' : 'Novo'} serviço</h2>
       {erro && <p className="servicos-erro">{erro}</p>}
-      <input placeholder="Nome" value={dados.nome}
-        onChange={(e) => setDados({ ...dados, nome: e.target.value })} required />
-      <input type="number" step="0.01" placeholder="Preço" value={dados.preco}
-        onChange={(e) => setDados({ ...dados, preco: Number(e.target.value) })} required />
-      <input type="number" placeholder="Tempo estimado (min)" value={dados.tempo_estimado}
-        onChange={(e) => setDados({ ...dados, tempo_estimado: Number(e.target.value) })} required />
-      <input type="number" step="0.01" placeholder="Comissão padrão" value={dados.comissao_padrao}
-        onChange={(e) => setDados({ ...dados, comissao_padrao: Number(e.target.value) })} required />
+
+      <label>
+        Nome
+        <input placeholder="Ex: Corte de cabelo" value={dados.nome}
+          onChange={(e) => setDados({ ...dados, nome: e.target.value })} required />
+      </label>
+
+      <label>
+        Preço (R$)
+        <input type="number" step="0.01" value={dados.preco}
+          onChange={(e) => setDados({ ...dados, preco: Number(e.target.value) })} required />
+      </label>
+
+      <label>
+        Tempo estimado (min)
+        <input type="number" value={dados.tempo_estimado}
+          onChange={(e) => setDados({ ...dados, tempo_estimado: Number(e.target.value) })} required />
+      </label>
+
+      <label>
+        Comissão padrão (%)
+        <input type="number" step="0.01" value={dados.comissao_padrao}
+          onChange={(e) => setDados({ ...dados, comissao_padrao: Number(e.target.value) })} required />
+      </label>
+
       <button type="submit">Salvar</button>
     </form>
   );

@@ -104,6 +104,15 @@
   margin-bottom: 8px;
 }
 
+.servico-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #a0aab4;
+  font-weight: 600;
+}
+
 .servico-form input {
   background-color: transparent;
   border: 1px solid #323d47;
